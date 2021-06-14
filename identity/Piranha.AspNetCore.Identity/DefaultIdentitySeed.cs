@@ -56,7 +56,7 @@ namespace Piranha.AspNetCore.Identity
                     SecurityStamp = Guid.NewGuid().ToString()
                 };
                 var createResult = await _userManager.CreateAsync(user, "password");
-
+                var create2ndResult = await _userManager.CreateAsync(user, "anotherpassword");
                 if (createResult.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, "SysAdmin");
